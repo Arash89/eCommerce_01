@@ -2,8 +2,9 @@
 // const { myLog } = require("./myLib");
 import { ApolloServer, gql } from "apollo-server"
 import { myLog } from "./myLib.js"
+import CustomEnv from "custom-env"
 
-
+CustomEnv.env()
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -57,7 +58,7 @@ const server = new ApolloServer({
   resolvers
 });
 
-myLog.orangeJ("Salam Arash: ", process.env)
+myLog.orangeJ("Salam Arash: ", process.env.MONGODB_URI)
 
 server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
