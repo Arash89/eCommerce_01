@@ -1,4 +1,9 @@
-const { ApolloServer, gql } = require("apollo-server");
+// const { ApolloServer, gql } = require("apollo-server");
+// const { myLog } = require("./myLib");
+import { ApolloServer, gql } from "apollo-server"
+import { myLog } from "./myLib.js"
+
+
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -34,7 +39,15 @@ const resolvers = {
   Mutation: {
     addUser: (root, args, context) => {
       const { firstName, age, companyName } = args;
+      const newUser = {
+        firstName,
+        age,
+        companyName
+      }
 
+      // TODO: Here I should add the newUser to mongoose
+
+      return newUser
     }
   }
 };
@@ -43,6 +56,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers
 });
+
+myLog.orangeJ("Salam Arash: ", process.env)
 
 server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
