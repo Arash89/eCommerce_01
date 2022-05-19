@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import { ApolloServer } from "apollo-server"
 import { myLog } from "./myLib.js"
 import CustomEnv from "custom-env"
-import { addUser } from './graphql/Mutations.js'
+import { addUser, updateUser } from './graphql/Mutations.js'
 import { typeDefs } from './graphql/typeDefs.js'
 import { getCompanies, getCompany, getUser, getUsers } from './graphql/Queries.js'
 
@@ -27,6 +27,7 @@ const resolvers = {
   ,
   Mutation: {
     addUser,
+    updateUser,
   }
 };
 

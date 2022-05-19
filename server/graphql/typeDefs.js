@@ -7,6 +7,7 @@ export const typeDefs = gql`
       firstName: String
       age: Int
       companyName: ID
+      companyNameString: Company
     }
     
     type Company {
@@ -25,5 +26,6 @@ export const typeDefs = gql`
     
     type Mutation {
       addUser(firstName: String!, age: Int, companyName: ID): User
+      updateUser(userId: ID, firstName: String, age: Int, companyName: ID): User
     }
 `;
