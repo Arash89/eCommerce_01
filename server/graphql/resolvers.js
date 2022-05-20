@@ -1,5 +1,5 @@
 import { getCompanies, getCompany, getUser, getUsers } from "./Queries.js";
-import { addUser, updateUser } from "./Mutations.js";
+import { addCompany, addUser, removeCompany, removeUser, updateCompany, updateUser } from "./Mutations.js";
 
 // Provide resolver functions for your schema fields
 export const resolvers = {
@@ -14,5 +14,9 @@ export const resolvers = {
   Mutation: {
     addUser,
     updateUser,
+    addCompany,
+    updateCompany,
+    removeCompany,
+    removeUser
   }
 };
