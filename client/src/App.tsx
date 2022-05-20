@@ -4,6 +4,7 @@ import {
   useQuery,
   gql
 } from "@apollo/client";
+import { UserListContainer } from './components/UserListContainer';
 
 const HELLO = gql`
   query Query {
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      <h3>Application Here: {data.hello}</h3>
+      <h3>Application Here: {data?.hello}</h3>
+      <UserListContainer />
     </div>
   );
 }
