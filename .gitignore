@@ -16,6 +16,8 @@ client/coverage
 
 # production
 client/build
+client/yarn.lock
+client/package-lock.json
 
 # misc
 .DS_Store
