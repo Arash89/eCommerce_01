@@ -1,6 +1,14 @@
 // @ts-nocheck
 import { memo, FC } from 'react';
 import styled from 'styled-components'
+import {
+  Toast,
+  ToastHeader,
+  ToastBody,
+  ToastStatus,
+  ToastTitle,
+  ToastCloseButton
+} from './BootstrapComponents';
 
 export interface IUser {
   id: string;
@@ -42,7 +50,6 @@ const getCompaniesColor = (companyName) => {
   }
 }
 
-
 const User: FC<IUser> = ({
   id,
   firstName,
@@ -50,24 +57,17 @@ const User: FC<IUser> = ({
   companyName: companyId,
   companyNameString: {companyName, description} ,
 }) => (
-  <div>
-
-    <div style={{opacity: 1}} className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-
-    <div className="toast-header">
+    <Toast>
+      <ToastHeader className="toast-header">
           <CompanyLogo {...getCompaniesColor(companyName)} />
-          <strong className="mr-auto">{firstName}</strong>
-          <small className="text-muted">{companyName}</small>
-          <button type="button" className="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      <div className="toast-body">
+          <ToastTitle>{firstName}</ToastTitle>
+          <ToastStatus>{companyName}</ToastStatus>
+          <ToastCloseButton />
+      </ToastHeader>
+      <ToastBody>
         {description}
-      </div>
-    </div>
-
-  </div>
+      </ToastBody>
+    </Toast>
 )
 
 const UserList: React.FC<IUser> = ({ users }) => (
