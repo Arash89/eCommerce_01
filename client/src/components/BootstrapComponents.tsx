@@ -39,6 +39,12 @@ export const ToastBodyBootstrap: FC<IBootstrapProps> = memo(({ children, classNa
   </div>
 ))
 
+export const ColBootstrap: FC<IBootstrapProps> = memo(({ children, className, ...otherProps }) => (
+  <div {...otherProps} className={classNames("col", className)}>
+    {children}
+  </div>
+))
+
 export const Toast = styled(ToastBootstrap)`
   opacity: 1
 `

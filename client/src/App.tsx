@@ -1,25 +1,14 @@
 import React from 'react';
-import './App.css';
-import {
-  useQuery,
-  gql
-} from "@apollo/client";
+import AppPanel from "./components/AppPanel";
 import { UserListContainer } from './components/UserListContainer';
 
-const HELLO = gql`
-  query Query {
-    hello
-  }
-`
-
 function App() {
-
-  const { data } = useQuery(HELLO)
-
   return (
-    <div className="App">
-      <h3>Application Here: {data?.hello}</h3>
-      <UserListContainer />
+    <div className="container">
+      <div className="row">
+        <AppPanel/>
+        <UserListContainer/>
+      </div>
     </div>
   );
 }
