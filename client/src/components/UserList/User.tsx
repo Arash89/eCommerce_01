@@ -8,9 +8,9 @@ import {
   ToastTitle,
   ToastCloseButton,
   CompanyLogo,
-} from './BootstrapComponents';
-import { IUser } from "./Types";
-import { getCompaniesColor } from "./utils";
+} from '../BootstrapComponents';
+import { IUser } from "../Types";
+import { getCompaniesColor } from "../utils";
 
 const User: FC<IUser> = ({
   id,

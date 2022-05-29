@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import UserList from './UserList';
-import { ColBootstrap } from "./BootstrapComponents";
-import Input from "./Input";
+import { Col } from "../BootstrapComponents";
+import UserInput from "./UserInput";
 
 const GET_USERS_QUERY = gql`
   query GetUsers {
@@ -19,15 +19,15 @@ const GET_USERS_QUERY = gql`
   }
 `
 
-export const UserListContainer = () => {
+const UserListContainer = () => {
   const { data = {getUsers: []} } = useQuery(GET_USERS_QUERY)
 
   const { getUsers: users } = data
   return (
-    <ColBootstrap>
-      <Input />
+    <Col>
+      <UserInput />
       <UserList users={users} />
-    </ColBootstrap>
+    </Col>
   )
 }
 

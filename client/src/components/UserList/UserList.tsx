@@ -1,6 +1,6 @@
 import { memo, FC } from 'react';
 import User from './User'
-import { IUsers } from "./Types";
+import { IUsers } from "../Types";
 import styled from "styled-components";
 
 

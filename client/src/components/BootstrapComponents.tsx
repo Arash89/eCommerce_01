@@ -45,6 +45,15 @@ export const ColBootstrap: FC<IBootstrapProps> = memo(({ children, className, ..
   </div>
 ))
 
+export const InputBootstrap: FC<IBootstrapProps> = memo(({ className, ...otherProps }) => (
+  <input
+    className="form-control"
+    type="text"
+    placeholder="Default input"
+    aria-label="default input example"
+  />
+))
+
 export const Toast = styled(ToastBootstrap)`
   opacity: 1
 `
@@ -57,6 +66,10 @@ export const ToastTitle = styled(ToastTitleBootstrap)``
 export const ToastStatus = styled(ToastStatusBootstrap)``
 
 export const ToastBody = styled(ToastBodyBootstrap)``
+
+export const Input = styled(ToastBodyBootstrap)``
+
+export const Col = styled(ColBootstrap)``
 
 interface IColor {
   red: number;

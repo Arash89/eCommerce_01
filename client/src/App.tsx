@@ -1,6 +1,6 @@
 import React from 'react';
 import AppPanel from "./components/AppPanel";
-import { UserListContainer } from './components/UserListContainer';
+import UserListContainer from './components/UserList/UserListContainer';
 
 function App() {
   return (

@@ -1,14 +1,10 @@
 import { memo } from "react";
 import styled from "styled-components";
+import { Input } from '../BootstrapComponents';
 
-const Input = () => (
+const UserInput = () => (
   <InputWrapper>
-    <input
-      className="form-control"
-      type="text"
-      placeholder="Default input"
-      aria-label="default input example"
-    />
+    <Input />
   </InputWrapper>
 )
 
