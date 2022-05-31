@@ -1,10 +1,12 @@
 import { memo } from 'react'
 import { Col } from './BootstrapComponents'
+import AddUserPanel from './AddUserPanel/AddUserPanel'
+import AddCompanyPanel  from './AddCompanyPanel/AddCompanyPanel'
 
 const AppPanel = () => (
   <Col>
-    <div>Insert User</div>
-    <div>Insert Company</div>
+    <AddUserPanel />
+    <AddCompanyPanel />
   </Col>
 )
 

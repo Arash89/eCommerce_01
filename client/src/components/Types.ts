@@ -20,3 +20,23 @@ export interface IBootstrapProps {
   className?: string;
   otherProps?: any;
 }
+
+export interface IBootstrapInputProps extends IBootstrapProps{
+  type?: string;
+  placeholder?: string;
+  ariaLabel?: string;
+}
+
+export interface IBootstrapDropDownProps extends IBootstrapProps{
+  dropdownTiltle?: string;
+  buttonType?: string;
+  buttonId?: string;
+}
+
+export interface IDropDownItem extends IBootstrapProps {
+  href?: string;
+}
+
+export interface IAddUerDropDown {
+
+}

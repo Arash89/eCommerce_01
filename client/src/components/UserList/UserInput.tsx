@@ -16,4 +16,4 @@ const InputWrapper = styled.div`
   margin-bottom: 10px;
 `
 
-export default memo(Input)
+export default memo(UserInput)

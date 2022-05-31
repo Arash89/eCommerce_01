@@ -1,7 +1,7 @@
 import { memo, FC } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components'
-import { IBootstrapProps } from './Types'
+import { IBootstrapDropDownProps, IBootstrapInputProps, IBootstrapProps, IDropDownItem } from './Types'
 
 export const ToastBootstrap: FC<IBootstrapProps> = memo(({ children, className, ...otherProps }) => (
   <div {...otherProps} className={classNames("toast", className)} role="alert" aria-live="assertive" aria-atomic="true">
@@ -45,14 +45,56 @@ export const ColBootstrap: FC<IBootstrapProps> = memo(({ children, className, ..
   </div>
 ))
 
-export const InputBootstrap: FC<IBootstrapProps> = memo(({ className, ...otherProps }) => (
+export const FormBootstrap: FC<IBootstrapProps> = memo(({ children, className, ...otherProps }) => (
+  <div {...otherProps} className={classNames("row g-3", className)} >
+    {children}
+  </div>
+))
+
+export const InputBootstrap: FC<IBootstrapInputProps> = memo(({ className, ariaLabel, placeholder, ...otherProps }) => (
   <input
     className="form-control"
     type="text"
-    placeholder="Default input"
-    aria-label="default input example"
+    aria-label={ariaLabel}
+    placeholder={placeholder}
+    {...otherProps}
   />
 ))
+
+export const DropDownBootstrap: FC<IBootstrapDropDownProps> = memo(({
+  children,
+  className,
+  dropdownTiltle,
+  buttonType = "btn-secondary",
+  buttonId,
+  ...otherProps
+}) => (
+  <div {...otherProps} className={classNames("dropdown", className)} >
+    <button
+      className={classNames("btn", buttonType, "dropdown-toggle")}
+      type="button"
+      id={buttonId}
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      {dropdownTiltle}
+    </button>
+    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      {children}
+    </ul>
+  </div>
+))
+
+
+export const DropDownItem: FC<IDropDownItem> = memo(({ children, className, href = "#", ...otherProps }) => (
+  <li>
+    <a className="dropdown-item" href={href}>
+      {children}
+    </a>
+  </li>
+))
+
+export const Form = styled(FormBootstrap)``
 
 export const Toast = styled(ToastBootstrap)`
   opacity: 1
@@ -67,7 +109,11 @@ export const ToastStatus = styled(ToastStatusBootstrap)``
 
 export const ToastBody = styled(ToastBodyBootstrap)``
 
-export const Input = styled(ToastBodyBootstrap)``
+export const Input = styled(InputBootstrap)``
+
+export const ListContainer = styled(DropDownBootstrap)``
+
+export const ListItem = styled(DropDownItem)``
 
 export const Col = styled(ColBootstrap)``
 
