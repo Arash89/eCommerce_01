@@ -74,24 +74,24 @@ export const DropDownBootstrap: FC<IBootstrapDropDownProps> = memo(({
       className={classNames("btn", buttonType, "dropdown-toggle")}
       type="button"
       id={buttonId}
-      data-bs-toggle="dropdown"
+      data-toggle="dropdown"
       aria-expanded="false"
     >
       {dropdownTitle}
     </button>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       {children}
-    </ul>
+    </div>
   </div>
 ))
 
 
 export const BootstrapDropDownItem: FC<IBootstrapDropDownItem> = memo(({ children, className, href = "#", ...otherProps }) => (
-  <li>
+  <div>
     <a className="dropdown-item" href={href}>
       {children}
     </a>
-  </li>
+  </div>
 ))
 
 export const Form = styled(FormBootstrap)``
