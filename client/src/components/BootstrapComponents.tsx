@@ -1,7 +1,7 @@
 import { memo, FC } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components'
-import { IBootstrapDropDownProps, IBootstrapInputProps, IBootstrapProps, IDropDownItem } from './Types'
+import { IBootstrapDropDownProps, IBootstrapInputProps, IBootstrapProps, IBootstrapDropDownItem } from './Types'
 
 export const ToastBootstrap: FC<IBootstrapProps> = memo(({ children, className, ...otherProps }) => (
   <div {...otherProps} className={classNames("toast", className)} role="alert" aria-live="assertive" aria-atomic="true">
@@ -64,7 +64,7 @@ export const InputBootstrap: FC<IBootstrapInputProps> = memo(({ className, ariaL
 export const DropDownBootstrap: FC<IBootstrapDropDownProps> = memo(({
   children,
   className,
-  dropdownTiltle,
+  dropdownTitle,
   buttonType = "btn-secondary",
   buttonId,
   ...otherProps
@@ -77,7 +77,7 @@ export const DropDownBootstrap: FC<IBootstrapDropDownProps> = memo(({
       data-bs-toggle="dropdown"
       aria-expanded="false"
     >
-      {dropdownTiltle}
+      {dropdownTitle}
     </button>
     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       {children}
@@ -86,7 +86,7 @@ export const DropDownBootstrap: FC<IBootstrapDropDownProps> = memo(({
 ))
 
 
-export const DropDownItem: FC<IDropDownItem> = memo(({ children, className, href = "#", ...otherProps }) => (
+export const BootstrapDropDownItem: FC<IBootstrapDropDownItem> = memo(({ children, className, href = "#", ...otherProps }) => (
   <li>
     <a className="dropdown-item" href={href}>
       {children}
@@ -111,9 +111,9 @@ export const ToastBody = styled(ToastBodyBootstrap)``
 
 export const Input = styled(InputBootstrap)``
 
-export const ListContainer = styled(DropDownBootstrap)``
+export const DropDown = styled(DropDownBootstrap)``
 
-export const ListItem = styled(DropDownItem)``
+export const DropDownItem = styled(BootstrapDropDownItem)``
 
 export const Col = styled(ColBootstrap)``
 

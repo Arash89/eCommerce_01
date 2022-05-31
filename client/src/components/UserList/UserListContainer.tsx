@@ -2,22 +2,8 @@ import { memo } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import UserList from './UserList';
 import { Col } from "../BootstrapComponents";
-import UserInput from "./UserInput";
-
-const GET_USERS_QUERY = gql`
-  query GetUsers {
-    getUsers {
-      id
-      firstName
-      age
-      companyName
-      companyNameString {
-        companyName
-        description
-      }
-    }
-  }
-`
+import UserInput from './UserInput'
+import { GET_USERS_QUERY } from '../../graphql/queries'
 
 const UserListContainer = () => {
   const { data = {getUsers: []} } = useQuery(GET_USERS_QUERY)

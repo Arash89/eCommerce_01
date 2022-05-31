@@ -28,15 +28,22 @@ export interface IBootstrapInputProps extends IBootstrapProps{
 }
 
 export interface IBootstrapDropDownProps extends IBootstrapProps{
-  dropdownTiltle?: string;
+  dropdownTitle?: string;
   buttonType?: string;
   buttonId?: string;
 }
 
-export interface IDropDownItem extends IBootstrapProps {
+export interface IBootstrapDropDownItem extends IBootstrapProps {
   href?: string;
 }
 
-export interface IAddUerDropDown {
+export interface ICompany extends IBootstrapDropDownItem {
+  id: string;
+  companyName: string;
+  description: string;
+}
 
+export interface IAddUserDropDown {
+  dropdownProps?: IBootstrapDropDownProps;
+  companies: ICompany[];
 }
