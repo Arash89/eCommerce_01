@@ -86,8 +86,8 @@ export const DropDownBootstrap: FC<IBootstrapDropDownProps> = memo(({
 ))
 
 
-export const BootstrapDropDownItem: FC<IBootstrapDropDownItem> = memo(({ children, className, href = "#", ...otherProps }) => (
-  <div>
+export const BootstrapDropDownItem: FC<IBootstrapDropDownItem> = memo(({ children, className, href = "#", onClick, ...otherProps }) => (
+  <div onClick={onClick}>
     <a className="dropdown-item" href={href}>
       {children}
     </a>
