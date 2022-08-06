@@ -3,6 +3,10 @@ import classNames from 'classnames';
 import styled from 'styled-components'
 import { IBootstrapDropDownProps, IBootstrapInputProps, IBootstrapProps, IBootstrapDropDownItem } from './Types'
 
+export const ButtonBootstrap: FC<IBootstrapProps> = memo(({ children, className, ...otherProps }) => (
+  <button {...otherProps} type="button" className={classNames("btn", className)}>{children}</button>
+))
+
 export const ToastBootstrap: FC<IBootstrapProps> = memo(({ children, className, ...otherProps }) => (
   <div {...otherProps} className={classNames("toast", className)} role="alert" aria-live="assertive" aria-atomic="true">
     {children}
@@ -95,6 +99,8 @@ export const BootstrapDropDownItem: FC<IBootstrapDropDownItem> = memo(({ childre
 ))
 
 export const Form = styled(FormBootstrap)``
+
+export const Button = styled(ButtonBootstrap)``
 
 export const Toast = styled(ToastBootstrap)`
   opacity: 1

@@ -24,3 +24,14 @@ export const GET_COMPANIES_QUERY = gql`
         }
     }
 `
+
+export const ADD_USER_MUTATION = gql`
+    mutation AddUser($firstName: String!, $age: Int, $companyName: ID) {
+        addUser(firstName: $firstName, age: $age, companyName: $companyName) {
+            id
+            firstName
+            age
+            companyName
+        }
+    }
+`

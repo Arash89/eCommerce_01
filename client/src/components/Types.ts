@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import { ReactNode, MouseEventHandler } from "react";
 
 export interface IUser {
   id: string;
@@ -35,6 +35,7 @@ export interface IBootstrapDropDownProps extends IBootstrapProps{
 
 export interface IBootstrapDropDownItem extends IBootstrapProps {
   href?: string;
+  onClick: MouseEventHandler<HTMLDivElement> | undefined;
 }
 
 export interface ICompany extends IBootstrapDropDownItem {

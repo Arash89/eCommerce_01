@@ -8,6 +8,8 @@ import { GET_USERS_QUERY } from '../../graphql/queries'
 const UserListContainer = () => {
   const { data = {getUsers: []} } = useQuery(GET_USERS_QUERY)
 
+  console.log('Arash Data: ', data)
+
   const { getUsers: users } = data
   return (
     <Col>
